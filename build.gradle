@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+def junitVersion = '5.7.2'
+def springVersion = '5.3.9'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(["org.junit.jupiter:junit-jupiter-api:${junitVersion}",
+                        "org.springframework:spring-test:${springVersion}",
+    ])
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    implementation([
+            "org.springframework:spring-context:${springVersion}",
+            "org.springframework:spring-core:${springVersion}",
+            "org.springframework:spring-beans:${springVersion}",
+            "org.springframework:spring-web:${springVersion}",
+
+            "javax.servlet:javax.servlet-api:4.0.1"
+    ])
+}
+
+test {
+    useJUnitPlatform()
+}

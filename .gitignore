@@ -1,0 +1,20 @@
+.gradle
+**/build/*
+.idea/
+
+!gradle-wrapper.jar
+
+.gradletasknamecache
+
+*.class
+*.log
+*.html
+*.bin
+*.css
+*.js
+*.idx
+
+# Package Files #
+*.jar
+*.war
+.vscode/settings.json
