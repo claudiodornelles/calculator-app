@@ -5,11 +5,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Power implements Operation {
-    private double base, exponent, power;
+    private double base;
+    private double exponent;
+    private double result;
     
     @Override
     public String toString() {
-        return "Power: " + base + " ^ " + exponent + " = " + power;
+        return "Power: " + base + " ^ " + exponent + " = " + result;
     }
     
     @Override
@@ -18,7 +20,7 @@ public class Power implements Operation {
         else {
             this.base = base;
             this.exponent = exponent;
-            this.power = Math.pow(base, exponent);
+            this.result = Math.pow(base, exponent);
             return this;
         }
     }
@@ -35,6 +37,6 @@ public class Power implements Operation {
     
     @Override
     public Double getResult() {
-        return power;
+        return result;
     }
 }

@@ -5,7 +5,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Divide implements Operation {
-    private double dividend, divisor, quotient;
+    private double dividend;
+    private double divisor;
+    private double quotient;
     
     @Override
     public String toString() {

@@ -5,7 +5,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Subtract implements Operation {
-    private double firstTerm, secondTerm, difference;
+    private double firstTerm;
+    private double secondTerm;
+    private double difference;
     
     @Override
     public String toString() {

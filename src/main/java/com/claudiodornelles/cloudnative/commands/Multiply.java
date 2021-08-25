@@ -5,7 +5,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Multiply implements Operation {
-    private double firstFactor, secondFactor, product;
+    private double firstFactor;
+    private double secondFactor;
+    private double product;
     
     @Override
     public String toString() {

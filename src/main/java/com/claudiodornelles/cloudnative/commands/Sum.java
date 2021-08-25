@@ -5,11 +5,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Sum implements Operation {
-    private double firstTerm, secondTerm, sum;
+    private double firstTerm;
+    private double secondTerm;
+    private double result;
     
     @Override
     public String toString() {
-        return "Sum: " + firstTerm + " + " + secondTerm + " = " + sum;
+        return "Sum: " + firstTerm + " + " + secondTerm + " = " + result;
     }
     
     @Override
@@ -18,7 +20,7 @@ public class Sum implements Operation {
         else {
             this.firstTerm = firstTerm;
             this.secondTerm = secondTerm;
-            this.sum = firstTerm + secondTerm;
+            this.result = firstTerm + secondTerm;
             return this;
         }
     }
@@ -35,6 +37,6 @@ public class Sum implements Operation {
     
     @Override
     public Double getResult() {
-        return sum;
+        return result;
     }
 }

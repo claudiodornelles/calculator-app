@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone repository') {
+            steps {
+                git branch: 'master', url: "https://github.com/claudiodornelles/calculator-app.git"
+            }
+        }
+
+        stage('Test application') {
+            steps {
+                sh './gradlew test'
+            }
+        }
+
+        stage('Build application') {
+            steps {
+                sh './gradlew build'
+            }
+        }
+
+        stage('Publish artifactory') {
+            steps {
+
+            }
+        }
+
+    }
+}
