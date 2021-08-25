@@ -29,7 +29,7 @@ pipeline {
                     spec: """{
                                 "files": [
                                     {
-                                        "pattern": "build/libs/calculator.jar",
+                                        "pattern": "build/libs/calculator.war",
                                         "target": "calculator-app"
                                     }
                                 ]
