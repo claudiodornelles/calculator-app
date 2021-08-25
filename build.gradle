@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'war'
 }
 
 def junitVersion = '5.7.2'

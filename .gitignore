@@ -1,9 +1,6 @@
 .gradle
 **/build/*
 .idea/
-
-!gradle-wrapper.jar
-
 .gradletasknamecache
 
 *.class
@@ -14,7 +11,4 @@
 *.js
 *.idx
 
-# Package Files #
-*.jar
-*.war
 .vscode/settings.json
