@@ -38,7 +38,7 @@
   "post-processors": [
     {
       "type": "docker-tag",
-      "repository": "claudiodornelles/tema-final-01",
+      "repository": "{{user `dockerhub_repository_name`}}",
       "tags": "calculator"
     },
     {
