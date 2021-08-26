@@ -36,22 +36,28 @@ The deployment were seperated in three steps (Jobs) such as build, provision and
    7. If so, you can move on.
 10. Go back to Jenkins dashboard and build Job 1.
 ## Job 2 - Provision
+**_ATTENTION - This job cannot be executed without the corresponding credentials to "claudiodornelles/tema-final-01" repository. With that been said, the following instructions only represent what is been executed during the build of this job._**
 1. For this job you will need to have installed in your local machine both Packer and Docker. 
    1. You can download Packer from the official website [here](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli)
    2. For downloading docker, please follow [this steps](https://docs.docker.com/engine/install/).
       1. After installing docker, you will need to run the command `sudo chmod 666 /var/run/docker.sock` in a terminal window in order to give it permission to run without a `sudo` command.
-3. Go to Jenkins dashboard and click `New Item` to create job 2.
+2. Go to Jenkins dashboard and click `New Item` to create job 2.
     1. Enter the name `job2-provision` for it.
     2. Choose `Pipeline` option and click `ok`
     3. Scroll down to `Pipeline` section and change the `Definition` field to `Pipeline script from SCM`
     4. Select `Git` and add the following repository URL `https://github.com/claudiodornelles/calculator-app.git`
     5. Scroll down to `Script Path`, type `job2/Jenkinsfile` and then click `Save`
-4. For this job to be executed, you need to provide Dockerhub credentials and repository information to Jenkins.
+3. For this job to be executed, you need to provide Dockerhub credentials and repository information to Jenkins.
    1. Go to Jenkins dashboard and click `Manage Jenkins > Manage Credentials > (global) > Add Credentials`
    2. Create a `Username with password` credential with your Dockerhub login information (If you do not have a Dockerhub account, create one [here](https://hub.docker.com/signup))
       1. Set this credential ID as `dockerhub-credentials`
-   3. Create another credentials, now with kind `Secret text` and provide the Dockerhub repository name (If you do not have a repository in Dockerhub, create a new public one)
-      1. NOTE: the `Secret` will be `yourDockerhubUsername/repositoryName` i.e: `claudiodornelles/tema-final-01`
-      2. Set this credential ID as `dockerhub-repository-name`
-5. 
+      2. Set this credential USERNAME as your Dockerhub username.
+      3. Set the password as a Dockerhub Token.
+         1. To get a Dockerhub token you need to log in your account, go to `Settings > Security > Access Tokens`.
+            1. Give the token a description i.e. `jenkins`
+            2. Leave `Access Permissions` as `Read, Write, Delete`
+            3. Click `Generate`
+   3. Now, you will need to give the repository information to Jenkins. This will be done by editing the file `job2/Jenkinsfile`
+      1. Change the variable called `DOCKERHUB_REPOSITORY_NAME` to the name of your repository following the pattern `dockerHubUsername/repositoryName` i.e. `claudiodornelles/tema-final-01`
+4. You can now go back to Jenkins dashboard and build Job 2.
 ## Job 3 - Deploy

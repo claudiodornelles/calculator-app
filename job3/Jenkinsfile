@@ -1,0 +1,18 @@
+pipeline {
+
+   agent any
+
+   stages {
+      stage('Download image from Docker Hub') {
+         steps {
+            sh 'docker pull claudiodornelles/tema-final-01:calculator'
+         }
+      }
+
+      stage('Run Docker image') {
+         steps {
+            sh 'docker run -p 8090:8080 -d claudiodornelles/tema-final-01:calculator'
+         }
+      }
+   }
+}
