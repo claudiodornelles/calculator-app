@@ -44,8 +44,8 @@
     {
       "type": "docker-push",
       "login": true,
-      "login_username":"claudiodornelles",
-      "login_password":"rR84i#!zp@D4s3"
+      "login_username":"{{user `dockerhub_username`}}",
+      "login_password":"{{user `dockerhub_user_password`}}"
     }
   ]
 }
