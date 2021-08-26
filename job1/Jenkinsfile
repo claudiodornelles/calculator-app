@@ -1,8 +1,10 @@
 pipeline {
-    def jfrogInstance = JFrog.instance SERVER_ID
-    def rtServer = jfrogInstance.artifactory
 
     agent any
+
+    environment {
+        ARTIFACTORY_ID = 'localjfrog'
+    }
 
     stages {
 
@@ -26,16 +28,18 @@ pipeline {
 
         stage('Publish artifactory') {
             steps {
-                rtServer.upload spec: """{
-                                            "files": [
-                                                {
-                                                    "pattern": "build/libs/calculator.war",
-                                                    "target": "calculator-app"
-                                                }
-                                            ]
-                                      }"""
+                rtUpload (
+                    serverId: env.ARTIFACTORY_ID,
+                    spec: """{
+                                "files": [
+                                    {
+                                        "pattern": "build/libs/calculator.war",
+                                        "target": "calculator-app"
+                                    }
+                                ]
+                    }"""
+                )
             }
         }
-
     }
 }
