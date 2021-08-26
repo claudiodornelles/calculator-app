@@ -12,7 +12,7 @@ The deployment were seperated in three steps (Jobs) such as build, provision and
 5. Follow along Jenkins' configuration wizard and install the recommended plugins.
 6. Now that you are at Jenkins dashboard, go to `Manage Jenkins > Manage Plugins > Available` and search for the plugin called `Artifactory Plugin` to install it.
 7. You can go back to Jenkins dashboard and click `New Item` to create the first job.
-   1. Enter a name for it.
+   1. Enter the name `job1-build` for it.
    2. Choose `Pipeline` option and click `ok`
    3. Scroll down to `Pipeline` section and change the `Definition` field to `Pipeline script from SCM`
    4. Select `Git` and add the following repository URL `https://github.com/claudiodornelles/calculator-app.git`
@@ -38,7 +38,7 @@ The deployment were seperated in three steps (Jobs) such as build, provision and
 ## Job 2 - Provision
 1. For this job we will need to add a plugin to Jenkins dashboard called `Packer`. To do so, open Jenkins dashboard and go to `Manage Jenkins > Manage Plugins > Available` and search for the plugin.
 2. Go back to Jenkins dashboard and click `New Item` to create job 2.
-    1. Enter a name for it.
+    1. Enter the name `job2-provision` for it.
     2. Choose `Pipeline` option and click `ok`
     3. Scroll down to `Pipeline` section and change the `Definition` field to `Pipeline script from SCM`
     4. Select `Git` and add the following repository URL `https://github.com/claudiodornelles/calculator-app.git`
