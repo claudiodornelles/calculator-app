@@ -37,14 +37,14 @@
   "post-processors": [
     {
       "type": "docker-tag",
-      "repository": "var.dockerhub_repository_name",
+      "repository": "{{user `dockerhub_repository_name`}}",
       "tags": ["calculator-app"]
     },
     {
       "type": "docker-push",
       "login": true,
-      "login_username":"var.dockerhub_username",
-      "login_password":"var.dockerhub_password"
+      "login_username":"{{user `dockerhub_username`}}",
+      "login_password":"{{user `dockerhub_password`}}"
     }
   ]
 }
