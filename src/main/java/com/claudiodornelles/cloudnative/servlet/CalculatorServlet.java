@@ -64,7 +64,7 @@ public class CalculatorServlet extends HttpServlet {
         } catch (IllegalArgumentException illegalArgumentException) {
             writer.println("<p>" + illegalArgumentException.getMessage() + "</p>");
             writer.println("<p> Please add to the end of URL a valid <strong><em>operation</strong></em>, a <strong><em>firstTerm</strong></em> and a <strong><em>secondTerm</strong></em>.</p>");
-            writer.println("<p>Example:<br>Sum operation of 3 and 6<br><code>http://localhost:8080/calculator/app<strong><em>?operation=sum&firstTerm=3&secondTerm=6</em></strong></p>");
+            writer.println("<p>Example:<br>Sum operation of 3 and 6<br><code>http://localhost:8090/calculator/app<strong><em>?operation=sum&firstTerm=3&secondTerm=6</em></strong></p>");
             writer.println("<ul>");
             writer.println("<li>Valid operations:</li>");
             writer.println("<ul>");
