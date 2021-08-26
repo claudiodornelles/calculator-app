@@ -36,20 +36,22 @@ The deployment were seperated in three steps (Jobs) such as build, provision and
    7. If so, you can move on.
 10. Go back to Jenkins dashboard and build Job 1.
 ## Job 2 - Provision
-1. For this job we will need to add a plugin to Jenkins dashboard called `Packer`. To do so, open Jenkins dashboard and go to `Manage Jenkins > Manage Plugins > Available` and search for the plugin.
-2. Go back to Jenkins dashboard and click `New Item` to create job 2.
+1. For this job you will need to have installed in your local machine both Packer and Docker. 
+   1. You can download Packer from the official website [here](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli)
+   2. For downloading docker, please follow [this steps](https://docs.docker.com/engine/install/).
+      1. After installing docker, you will need to run the command `sudo chmod 666 /var/run/docker.sock` in a terminal window in order to give it permission to run without a `sudo` command.
+3. Go to Jenkins dashboard and click `New Item` to create job 2.
     1. Enter the name `job2-provision` for it.
     2. Choose `Pipeline` option and click `ok`
     3. Scroll down to `Pipeline` section and change the `Definition` field to `Pipeline script from SCM`
     4. Select `Git` and add the following repository URL `https://github.com/claudiodornelles/calculator-app.git`
     5. Scroll down to `Script Path`, type `job2/Jenkinsfile` and then click `Save`
-3. For this job to be executed, you need to provide Dockerhub credentials and repository information to Jenkins.
+4. For this job to be executed, you need to provide Dockerhub credentials and repository information to Jenkins.
    1. Go to Jenkins dashboard and click `Manage Jenkins > Manage Credentials > (global) > Add Credentials`
    2. Create a `Username with password` credential with your Dockerhub login information (If you do not have a Dockerhub account, create one [here](https://hub.docker.com/signup))
       1. Set this credential ID as `dockerhub-credentials`
    3. Create another credentials, now with kind `Secret text` and provide the Dockerhub repository name (If you do not have a repository in Dockerhub, create a new public one)
       1. NOTE: the `Secret` will be `yourDockerhubUsername/repositoryName` i.e: `claudiodornelles/tema-final-01`
       2. Set this credential ID as `dockerhub-repository-name`
-4. This job will upload a Docker image to Dockerhub using Packer. For this step, you will need to have Packer installed in your local machine.
-   1. You can download Packer from the official website [here](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli)
+5. 
 ## Job 3 - Deploy

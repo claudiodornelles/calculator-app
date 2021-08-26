@@ -21,7 +21,7 @@
     {
       "type": "shell",
       "inline": [
-        "sudo apt update", "sudo apt install ansible -y"
+        "apt update", "apt install ansible -y"
       ]
     },
     {
