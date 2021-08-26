@@ -36,16 +36,18 @@
   ],
 
   "post-processors": [
-    {
-      "type": "docker-tag",
-      "repository": "{{user `dockerhub_repository_name`}}",
-      "tags": "calculator"
-    },
-    {
-      "type": "docker-push",
-      "login": true,
-      "login_username":"{{user `dockerhub_username`}}",
-      "login_password":"{{user `dockerhub_user_password`}}"
-    }
+    [
+      {
+        "type": "docker-tag",
+        "repository": "{{user `dockerhub_repository_name`}}",
+        "tags": "calculator"
+      },
+      {
+        "type": "docker-push",
+        "login": true,
+        "login_username":"{{user `dockerhub_username`}}",
+        "login_password":"{{user `dockerhub_user_password`}}"
+      }
+    ]
   ]
 }
