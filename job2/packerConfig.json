@@ -12,7 +12,8 @@
       "commit": true,
       "changes": [
         "EXPOSE 8080",
-        "ENTRYPOINT [\"apache-tomcat-9.0.52/bin/startup.sh\"]"
+        "RUN apache-tomcat-9.0.52/bin/startup.sh",
+        "CMD [\"tail\", \"-f\", \"apache-tomcat-9.0.52/logs/catalina.out\"]"
       ]
     }
   ],
