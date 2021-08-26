@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
-        DOCKERHUB_REPOSITORY_NAME = credentials('dockerhub-repository-name')
+        DOCKERHUB_REPOSITORY_NAME = 'claudiodornelles/tema-final-01'
     }
     stages {
 
