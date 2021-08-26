@@ -28,6 +28,7 @@ pipeline {
 
         stage('Publish artifactory') {
             steps {
+                rtServer (id: env.ARTIFACTORY_ID)
                 rtUpload (
                     serverId: env.ARTIFACTORY_ID,
                     spec: """{

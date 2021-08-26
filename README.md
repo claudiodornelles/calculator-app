@@ -17,7 +17,7 @@ The deployment were seperated in three steps (Jobs) such as build, provision and
    3. Scroll down to `Pipeline` section and change the `Definition` field to `Pipeline script from SCM`
    4. Select `Git` and add the following repository URL `https://github.com/claudiodornelles/calculator-app.git`
    5. Scroll down to `Script Path`, type `job1/Jenkinsfile` and then click `Save`
-8. Last step is to configure the publishing environment with JFrog Artifactory.
+8. Configure the publishing environment with JFrog Artifactory.
    1. Download JFrog Artifactory from the [official website](https://jfrog.com/download-jfrog-platform/) and follow the configuration tutorial from [here](https://www.jfrog.com/confluence/display/JFROG/Installing+Artifactory)
       1. If you have a Tomcat installed in your computer, make sure you do not have an environment variable called `CATALINA_HOME` configured. It might conflict with JFrog Artifactory installation, and it won't be able to run automatically.
    2. After installing Artifactory, run it in a terminal window with the following command `service artifactory <start|stop|check>`
@@ -30,7 +30,7 @@ The deployment were seperated in three steps (Jobs) such as build, provision and
    1. Go back to Jenkins dashboard and click `Manage Jenkins > Configure System`
    2. Scroll down to JFrog section
    3. Click `Add JFrog Plataform Instance` to create a new JFrog instance
-   4. Give it an Instance ID and type the access URL (By default, http://localhost:8082)
+   4. Give it an Instance ID `1` and type the access URL (By default, http://localhost:8082)
    5. Now type the **_JFrog's admin credentials_** to give it permissions and click `Test Connection` button.
    6. You should now see a message saying `Found JFrog Artifactory {version} at http://localhost:8082/artifactory`.
    7. If so, you can move on.
