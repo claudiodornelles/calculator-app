@@ -50,5 +50,6 @@ The deployment were seperated in three steps (Jobs) such as build, provision and
    3. Create another credentials, now with kind `Secret text` and provide the Dockerhub repository name (If you do not have a repository in Dockerhub, create a new public one)
       1. NOTE: the `Secret` will be `yourDockerhubUsername/repositoryName` i.e: `claudiodornelles/tema-final-01`
       2. Set this credential ID as `dockerhub-repository-name`
-   4. 
+4. This job will upload a Docker image to Dockerhub using Packer. For this step, you will need to have Packer installed in your local machine.
+   1. You can download Packer from the official website [here](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli)
 ## Job 3 - Deploy

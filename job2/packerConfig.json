@@ -1,6 +1,6 @@
 {
   "variables": {
-    "dockerhub_repository":"",
+    "dockerhub_repository_name":"",
     "dockerhub_username":"",
     "dockerhub_user_password":""
   },
@@ -35,14 +35,14 @@
     },
     {
       "type": "docker-tag",
-      "repository": "{{user `dockerhub_repository`}}",
+      "repository": "var.dockerhub_repository_name",
       "tags": ["calculator-app"]
     },
     {
       "type": "docker-push",
       "login": true,
-      "login_username":"{{user `dockerhub_username`}}",
-      "login_password":"{{user `dockerhub_password`}}"
+      "login_username":"var.dockerhub_username",
+      "login_password":"var.dockerhub_password"
     }
   ]
 }
