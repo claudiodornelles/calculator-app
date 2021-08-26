@@ -8,7 +8,8 @@ The deployment were seperated in three steps (Jobs) such as build, provision and
    1. If any problem occurs, and you do not have access to Jenkins dashboard, you can check if it is running by typing the following command in a terminal window `service jenkins status`
    2. You can use this command to perform manual tasks with jenkins `service jenkins { start | stop | status | restart | force-reload }`
    3. Jenkins uses by default the port 8080, you can change that within the file `/etc/default/Jenkins`. Just change the property `HTTP_PORT`
-4. It's recommended to chance the default admin password at this time.
+4. Once you access Jenkins Dashboard for the first time, it will ask you for a password. This password can be found at `/var/lib/jenkins/secrets/initialAdminPassword`
+   1. It's recommended to chance the default admin password at this time.
 5. Follow along Jenkins' configuration wizard and install the recommended plugins.
 6. Now that you are at Jenkins dashboard, go to `Manage Jenkins > Manage Plugins > Available` and search for the plugin called `Artifactory Plugin` to install it.
 7. You can go back to Jenkins dashboard and click `New Item` to create the first job.
@@ -67,7 +68,7 @@ For this job, all you have to do is create the job in Jenkins dashboard and run 
    2. Choose `Pipeline` option and click `ok`
    3. Scroll down to `Pipeline` section and change the `Definition` field to `Pipeline script from SCM`
    4. Select `Git` and add the following repository URL `https://github.com/claudiodornelles/calculator-app.git`
-   5. Scroll down to `Script Path`, type `job2/Jenkinsfile` and then click `Save`
+   5. Scroll down to `Script Path`, type `job3/Jenkinsfile` and then click `Save`
 2. Run the job build.
 
 # How to use the application
