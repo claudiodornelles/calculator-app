@@ -61,3 +61,24 @@ The deployment were seperated in three steps (Jobs) such as build, provision and
       1. Change the variable called `DOCKERHUB_REPOSITORY_NAME` to the name of your repository following the pattern `dockerHubUsername/repositoryName` i.e. `claudiodornelles/tema-final-01`
 4. You can now go back to Jenkins dashboard and build Job 2.
 ## Job 3 - Deploy
+For this job, all you have to do is create the job in Jenkins dashboard and run it.
+1. Go to Jenkins dashboard and click `New Item` to create job 2.
+   1. Enter the name `job2-provision` for it.
+   2. Choose `Pipeline` option and click `ok`
+   3. Scroll down to `Pipeline` section and change the `Definition` field to `Pipeline script from SCM`
+   4. Select `Git` and add the following repository URL `https://github.com/claudiodornelles/calculator-app.git`
+   5. Scroll down to `Script Path`, type `job2/Jenkinsfile` and then click `Save`
+2. Run the job build.
+
+# How to use the application
+After completing the execution of the listed jobs above, you can now use the Calculator on a web browser with the URL `http://localhost:8090/calculator/app?&operation=''&firstTerm=''&secondTerm= ''`
+1. Replace operation='' to one of the following:
+   1. operation=sum
+   2. operation=subtract
+   3. operation=multiply
+   4. operation=divide
+   5. operation=power
+2. Example: Sum operation of 3 and 6:http://localhost:8090/calculator/app?operation=sum&firstTerm=3&secondTerm=6
+3. If you want to stop the app, run the following commands
+   1. Run `docker ps` and copy the container id
+   2. Run `docker stop <CONTAINER ID>` to stop the container
