@@ -39,7 +39,7 @@
     {
       "type": "docker-tag",
       "repository": "{{user `dockerhub_repository_name`}}",
-      "tags": ["app"]
+      "tag": "calculator-app"
     },
     {
       "type": "docker-push",
