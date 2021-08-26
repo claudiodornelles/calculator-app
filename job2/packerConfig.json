@@ -38,8 +38,8 @@
   "post-processors": [
     {
       "type": "docker-tag",
-      "repository": "claudiodornelles/tema-final-01",
-      "tag": "calculator-app"
+      "repository": "{{user `dockerhub_repository_name`}}",
+      "tag": "image.calculator.app"
     },
     {
       "type": "docker-push",
