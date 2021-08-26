@@ -12,7 +12,7 @@
       "commit": true,
       "changes": [
         "EXPOSE 8080",
-        "COPY --chmod 666 . .",
+        "CMD --chmod 666 .",
         "CMD apache-tomcat-9.0.52/bin/startup.sh",
         "ENTRYPOINT [\"tail\", \"-f\", \"apache-tomcat-9.0.52/logs/catalina.out\"]"
       ]
