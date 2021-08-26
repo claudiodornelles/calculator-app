@@ -13,7 +13,7 @@
       "changes": [
         "EXPOSE 8080",
         "RUN apache-tomcat-9.0.52/bin/startup.sh",
-        "CMD [\"tail\", \"-f\", \"apache-tomcat-9.0.52/logs/catalina.out\"]"
+        "CMD [\"sudo\", \"tail\", \"-f\", \"apache-tomcat-9.0.52/logs/catalina.out\"]"
       ]
     }
   ],
