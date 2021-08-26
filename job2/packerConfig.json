@@ -12,7 +12,7 @@
       "commit": true,
       "changes": [
         "EXPOSE 8080",
-        "ENTRYPOINT [\"apache-tomcat-9.0.44/bin/startup.sh\"]"
+        "ENTRYPOINT [\"apache-tomcat-9.0.52/bin/startup.sh\"]"
       ]
     }
   ],
@@ -30,7 +30,7 @@
     },
     {
       "type": "file",
-      "source": "job1/build/libs/calculator.war",
+      "source": "/var/lib/jenkins/workspace/job2-provision/job1/build/libs/calculator.war",
       "destination": "/apache-tomcat-9.0.52/webapps/calculator.war"
     }
   ],
