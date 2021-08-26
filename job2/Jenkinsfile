@@ -1,0 +1,33 @@
+pipeline {
+
+    agent any
+
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+        DOCKERHUB_REPOSITORY = credentials('dockerhub-repository-name')
+    }
+    stages {
+
+        stage('Get artifact from JFrog server') {
+            steps {
+                rtDownload (
+                    serverId: "jfrog-final-task",
+                    spec: """{
+                        "files": [
+                            {
+                                "pattern": "calculator-app/calculator.war",
+                                "target": "job1/build/libs/calculator.war"
+                            }
+                        ]
+                    }"""
+                )
+            }
+        }
+
+        stage('Packer build') {
+            steps {
+                sh 'packer build  -var "dockerhub_repository=$DOCKERHUB_REPOSITORY" -var "dockerhub_username=$DOCKERHUB_CREDENTIALS_USR" -var "dockerhub_user_password=$DOCKERHUB_CREDENTIALS_PSW" job2/packerConfig.json'
+            }
+        }
+    }
+}
