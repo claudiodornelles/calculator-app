@@ -32,7 +32,9 @@
       "type": "file",
       "source": "job1/build/libs/calculator.war",
       "destination": "/apache-tomcat-9.0.52/webapps/calculator.war"
-    },
+    }
+  ],
+  "post-processors": [
     {
       "type": "docker-tag",
       "repository": "var.dockerhub_repository_name",
