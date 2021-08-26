@@ -30,7 +30,7 @@ The deployment were seperated in three steps (Jobs) such as build, provision and
    1. Go back to Jenkins dashboard and click `Manage Jenkins > Configure System`
    2. Scroll down to JFrog section
    3. Click `Add JFrog Plataform Instance` to create a new JFrog instance
-   4. Give it an Instance ID `1` and type the access URL (By default, http://localhost:8082)
+   4. Give it the Instance ID `jfrog-final-task` and type the access `URL http://localhost:8082`.
    5. Now type the **_JFrog's admin credentials_** to give it permissions and click `Test Connection` button.
    6. You should now see a message saying `Found JFrog Artifactory {version} at http://localhost:8082/artifactory`.
    7. If so, you can move on.

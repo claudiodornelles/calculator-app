@@ -2,10 +2,6 @@ pipeline {
 
     agent any
 
-    environment {
-        ARTIFACTORY_ID = 'localjfrog'
-    }
-
     stages {
 
         stage('Clone repository') {
@@ -28,9 +24,8 @@ pipeline {
 
         stage('Publish artifactory') {
             steps {
-                rtServer (id: env.ARTIFACTORY_ID)
                 rtUpload (
-                    serverId: env.ARTIFACTORY_ID,
+                    serverId: "jfrog-final-task",
                     spec: """{
                                 "files": [
                                     {
