@@ -34,17 +34,18 @@
       "destination": "/apache-tomcat-9.0.52/webapps/calculator.war"
     }
   ],
+
   "post-processors": [
     {
       "type": "docker-tag",
       "repository": "{{user `dockerhub_repository_name`}}",
-      "tags": ["calculatorApp"]
+      "tags": ["app"]
     },
     {
       "type": "docker-push",
       "login": true,
-      "login_username":"{{user `dockerhub_username`}}",
-      "login_password":"{{user `dockerhub_password`}}"
+      "login_username":"claudiodornelles",
+      "login_password":"rR84i#!zp@D4s3"
     }
   ]
 }
