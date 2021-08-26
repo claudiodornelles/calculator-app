@@ -39,7 +39,7 @@
     {
       "type": "docker-tag",
       "repository": "{{user `dockerhub_repository_name`}}",
-      "tag": "image.calculator.app"
+      "tag": "calculator"
     },
     {
       "type": "docker-push",
