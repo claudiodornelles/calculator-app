@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
-        DOCKERHUB_REPOSITORY = credentials('dockerhub-repository-name')
+        DOCKERHUB_REPOSITORY_NAME = credentials('dockerhub-repository-name')
     }
     stages {
 
@@ -26,7 +26,7 @@ pipeline {
 
         stage('Packer build') {
             steps {
-                sh 'packer build  -var "dockerhub_repository=$DOCKERHUB_REPOSITORY" -var "dockerhub_username=$DOCKERHUB_CREDENTIALS_USR" -var "dockerhub_user_password=$DOCKERHUB_CREDENTIALS_PSW" "job2/packerConfig.json"'
+                sh 'packer build  -var "dockerhub_repository_name=$DOCKERHUB_REPOSITORY_NAME" -var "dockerhub_username=$DOCKERHUB_CREDENTIALS_USR" -var "dockerhub_user_password=$DOCKERHUB_CREDENTIALS_PSW" "job2/packerConfig.json"'
             }
         }
     }
